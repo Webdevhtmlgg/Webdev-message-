@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Log-in</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('5.jpeg');
+      background-size:cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form {
+      width: 500px;
+      height: 40%;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    button {
+     width: 100%;
+      height: 115px;
+      margin: 10px 0;
+      padding: 5px;
+      font-size: 30px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width:400px;
+      height:200%;
+      font-size:50px;
+    }
+    button:hover {
+      background-color: #0056b3;
+      width:400;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    h2 {
+      font-size:100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="login(event)">
+      <input type="text" placeholder="Username" id="Username">
+      <br>
+      <input type="password" placeholder="Password" id="password">
+      <br>
+      <button type="submit">Login</button>
+      <p class="error" id="errorMessage"></p>
+    </form>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const username = document.getElementById('Username').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+
+      if (username.trim() === '' || password.trim() === '') {
+        errorMessage.textContent = 'Please enter both Number and password.';
+        return;
+      }
+
+      // Perform login validation here
+      // For demonstration, let's assume login is successful
+      alert(`hello loveee, basahin mo. ${username}!`);
+
+      // Redirect to different pages based on the user
+      if (username === 'admin') {
+        window.location.href = 'https://webdevhtmlgg.github.io/Web-dev-Lorenz-enzo/auto.html';
+      } else {
+        window.location.href = 'https://webdevhtmlgg.github.io/Web-dev-Lorenz-enzo/auto.html';
+      }
+    }
+  </script>
+</body>
+</html>
